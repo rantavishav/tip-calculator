@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;500;700&display=swap');
+:root{
+    --cyan-strong: hsl(172, 67%, 45%);
+    --cyan-very-dark: hsl(183, 100%, 15%);
+    --cyan-dark-grayish : hsl(186, 14%, 43%);
+    --cyan-light-grayish : hsl(185, 41%, 84%);
+    --white: hsl(0, 0%, 100%);
+    
+}
+body{
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Space Mono';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: var(--cyan-dark-grayish);
+}
+h6{
+    padding: 0px;
+    margin-bottom: 0px;
+}
+p{
+    font-size: 1rem;
+}
+input{
+    background-color: var(--cyan-light-grayish);
+    border-color: transparent;
+    border-radius: 5px;
+    margin: 0px;
+    text-align: right;
+    font-family: inherit;
+    font-size: 1.5rem;
+}
+input[type="number"]:active{
+    border: 2px solid var(--cyan-strong);
+}
+
+/* Remove arrow from input field */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+button{
+    font-family: inherit;
+    border-color: transparent;
+    border-radius: 2px;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--cyan-light-grayish);
+}
+
+.main-title{
+    padding-bottom: 2rem;
+    letter-spacing: 1rem;
+}
+
+.main-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: 10px;
+}
+
+.content-left-container{
+    width: 50%;
+    padding: 0rem 0rem;    
+}
+
+.bill-section input{
+    background-image: url("./images/icon-dollar.svg");
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+
+.select-tip-section .tip-options{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.tip-options .tip-value{
+    width: 29%;
+    margin: .5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background-color: var(--cyan-very-dark);
+    color: var(--white);
+    cursor: pointer;
+    border-radius: 5px;
+    
+
+}
+
+.tip-options .tip-value:hover{
+    background-color: var(--cyan-strong);
+}
+
+/* Helper Active Class toggle through Js */
+.tip-options .tip-value-active{
+    background-color: var(--cyan-strong);
+}
+
+#custom-tip{
+    border-radius: 2px;
+    background-color: var(--white);
+    text-align: center;
+    color: black;
+}
+
+.people-count-section input{
+    background-image: url(./images/icon-person.svg);
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+
+.content-right-container{
+    background-color: var(--cyan-very-dark);
+    color: var(--white);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-left: -5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.amount-detail{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.amount-detail .tip-amount{
+    margin-right: 4rem;
+}
+
+.amount-detail .total-amount{
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--cyan-strong);
+}
+
+.reset-button{
+    background-color: #0b686d;
+    color: var(--cyan-very-dark);
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.reset-button:active , .reset-button:hover, .reset-button:focus{
+    background-color: var(--cyan-strong) ;
+}
+
+
+/* Media Query Less than 1000px */
+
+@media only screen and (max-width:1000px){
+    :root{
+        font-size: 24px;
+    }
+    .main-container{
+        height: 100vh;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+    }
+
+    .main-content{
+        margin: 0px;
+        padding: 0px;
+        flex-direction: column;
+        width: 100%;
+        
+    }
+
+    .content-left-container{
+        margin-left: 1rem;
+    }
+   .tip-options .tip-value{
+        width: 39%;
+    }
+    .content-right-container{
+        margin: 5rem 0px 0px 0px ;
+    }
+
+    .amount-detail .tip-amount{
+        margin-right: 1rem;
+    }
+    
+    
+}
