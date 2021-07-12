@@ -34,8 +34,8 @@ input{
     font-family: inherit;
     font-size: 1.5rem;
 }
-input[type="number"]:active{
-    border: 2px solid var(--cyan-strong);
+input[type="number"]:focus-visible{
+    outline-color: var(--cyan-strong);
 }
 
 /* Remove arrow from input field */
@@ -80,6 +80,15 @@ button{
     padding: 0rem 0rem;    
 }
 
+.content-left-container .heading{
+    display: flex;
+    justify-content: space-between;
+}
+
+.error-message{
+    color: red;
+    display: none;
+}
 .bill-section input{
     background-image: url("./images/icon-dollar.svg");
     background-repeat: no-repeat;

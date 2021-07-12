@@ -19,25 +19,36 @@
     <div class="main-content">
       <div class="content-left-container">
         <div class="bill-section">
-          <h6>Bill</h6>
-          <input id="bill-charge" name="bill-charge" type="number" placeholder="0">
+          <div class="heading">
+            <h6>Bill</h6>
+            <h6 class="error-message" id="bill-error-message">Can't be negative or zero</h6>
+          </div>
+          
+          <input id="bill-charge" name="bill-charge" type="number" placeholder="0" oninput=billInput()>
         </div>
 
         <div class="select-tip-section">
-          <h6>Select Tip %</h6>
+          <div class="heading">
+            <h6>Select Tip %</h6>
+            <h6 class="error-message" id="tip-error-message">Can't be negative </h6>
+          </div>
           <div class="tip-options">
-            <button class="tip-value ">5%</button>
-            <button class="tip-value ">10%</button>
-            <button class="tip-value ">15%</button>
-            <button class="tip-value ">25%</button>
-            <button class="tip-value ">50%</button>
-            <input type="number" name="custom-tip" id="custom-tip" placeholder="Custom" class="tip-value ">
+            <button class="tip-value" value="5" onclick=tipInput(event)>5%</button>
+            <button class="tip-value" value="10" onclick=tipInput(event)>10%</button>
+            <button class="tip-value" value="15" onclick=tipInput(event)>15%</button>
+            <button class="tip-value" value="25" onclick=tipInput(event)>25%</button>
+            <button class="tip-value" value="50" onclick=tipInput(event)>50%</button>
+            <input type="number" name="custom-tip" id="custom-tip" placeholder="Custom" class="tip-value" oninput=tipInput(event) >
           </div>
         </div>
 
         <div class="people-count-section">
-          <h6>Number of People</h6>
-          <input type="number" name="people-count" id="people-count" placeholder="0">
+          
+          <div class="heading">
+            <h6>Number of People</h6>
+            <h6 class="error-message" id="people-error-message">Can't be negative or zero</h6>
+          </div>
+          <input type="number" name="people-count" id="people-count" placeholder="0" oninput=peopleInput(event)>
         </div>
       </div>
 
@@ -47,7 +58,7 @@
             <p class="tip-amount">
               Tip Amount <br> /person
             </p>
-            <p class="total-amount">
+            <p class="total-amount" id="total-tip-per-person">
               $0.00
             </p>
           </div>
@@ -56,17 +67,17 @@
             <p class="tip-amount">
               Total <br> /person
             </p>
-            <p class="total-amount">
+            <p class="total-amount" id="total-amount-per-person">
               $0.00
             </p>
           </div>        
       </div>
 
-      <button class="reset-button">Reset</button>
+      <button class="reset-button" onclick=resetEverthing()>Reset</button>
     </div>
   </div>
 
-  
+  <script src="main.js"></script>
 
 </body>
 </html>
